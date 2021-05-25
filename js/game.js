@@ -13,14 +13,17 @@ class Game {
         this.snake = new Snake(10, 10);
         this.food = new Food();
         this.speed = 15;
-        this.state = 0;
+        this.state = 1;
         this.frame = 0;
         this.points = 0;
         new InputHandler();
     }
     update(ctx, canvas) {
-        this.snake.update(this);
+        if (this.state === 1) {
+            this.snake.update(this, canvas);
+        }
         this.food.draw(ctx);
         this.snake.draw(ctx);
+
     }
 }
