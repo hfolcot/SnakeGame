@@ -15,11 +15,12 @@ class Game {
         this.speed = 15;
         this.state = 0;
         this.frame = 0;
+        this.points = 500;
         new InputHandler();
     }
     update(ctx, canvas) {
         this.snake.update(this);
-        this.snake.draw(ctx);
         this.food.draw(ctx);
+        this.snake.draw(ctx);
     }
 }
