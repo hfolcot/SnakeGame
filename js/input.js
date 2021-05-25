@@ -1,7 +1,6 @@
 class InputHandler {
     constructor(){
         document.addEventListener('keydown', function(e) {
-            console.log(e)
             // Prevent snake from turning in opposite direction into itself
             if(e.key === 'ArrowLeft' && game.snake.direction != 'r'){
                 game.snake.direction = 'l';

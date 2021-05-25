@@ -28,13 +28,11 @@ class Snake {
             }
             if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
                 // Snake has crashed into a wall
-                console.log("You hit the wall");
                 game.state = 3;
             }
             for (let i = 0; i < this.tail.length; i++) {
                 if (this.x === this.tail[i].x && this.y === this.tail[i].y) {
                     //Snake has crashed into itself
-                    console.log("You hit your tail");
                     game.state = 3;
                 }
             }
