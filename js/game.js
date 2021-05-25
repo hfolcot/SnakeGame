@@ -15,7 +15,7 @@ class Game {
         this.speed = 15;
         this.state = 0;
         this.frame = 0;
-        this.points = 500;
+        this.points = 0;
         new InputHandler();
     }
     update(ctx, canvas) {
