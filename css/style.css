@@ -1,0 +1,10 @@
+html body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+html body #game {
+  background-color: #fafafa;
+  border: 1px solid black;
+}
