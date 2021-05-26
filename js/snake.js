@@ -26,7 +26,7 @@ class Snake {
                     this.y -= 10;
                     break;
             }
-            if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+            if (this.x < 0 || this.x + this.size > canvas.width || this.y < 0 || this.y + this.size > canvas.height) {
                 // Snake has crashed into a wall
                 game.state = 3;
             }
