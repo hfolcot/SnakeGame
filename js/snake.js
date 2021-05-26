@@ -7,6 +7,9 @@ class Snake {
         this.direction = 'r';
         this.length = 3;
         this.tail = [];
+        this.eatSound = new Audio('assets/sounds/beep.wav');
+        this.crashSound = new Audio('assets/sounds/crash.wav');
+        this.owSound = new Audio('assets/sounds/ow.wav');
     }
 
     update(game, canvas) {
@@ -28,11 +31,13 @@ class Snake {
             }
             if (this.x < 0 || this.x + this.size > canvas.width || this.y < 0 || this.y + this.size > canvas.height) {
                 // Snake has crashed into a wall
+                this.crashSound.play();
                 game.state = 3;
             }
             for (let i = 0; i < this.tail.length; i++) {
                 if (this.x === this.tail[i].x && this.y === this.tail[i].y) {
                     //Snake has crashed into itself
+                    this.owSound.play();
                     game.state = 3;
                 }
             }
@@ -44,8 +49,11 @@ class Snake {
         }
         if (this.x + 1 === game.food.x && this.y + 1 === game.food.y) {
             game.food.update(game);
-            game.points++;
+            game.points += (1 * game.speed);
             this.length++;
+            this.eatSound.pause();
+            this.eatSound.load();
+            this.eatSound.play();
             document.getElementById('score').innerText = game.points;
         }
     }
