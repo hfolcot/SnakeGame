@@ -11,7 +11,7 @@ class Snake {
 
     update(game, canvas) {
 
-        if (game.frame % Math.floor(100 / game.speed) === 0) {
+        if (game.frame % (10 - game.speed) === 0) {
             switch (this.direction) {
                 case 'r':
                     this.x += 10;
@@ -46,6 +46,7 @@ class Snake {
             game.food.update(game);
             game.points++;
             this.length++;
+            document.getElementById('score').innerText = game.points;
         }
     }
     draw(ctx) {

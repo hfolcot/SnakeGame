@@ -1,13 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+
 html {
     body {
-        display: flex;
+        display        : flex;
+        flex-direction : column;
         justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
+        align-items    : center;
+        height         : 100vh;
+        overflow       : hidden;
+        font-size      : 30px;
+        font-family    : 'Odibee Sans', sans-serif;
+
+        .scoreContainer {
+            margin-bottom: 15px;
+        }
+
+        #pauseInfo {
+            margin-bottom: 25px;
+            font-size    : 20px;
+        }
+
         #game {
-            background-color: #fafafa;
-            border: 1px solid black;
+            background-color: wheat;
+            border          : 1px solid black;
+            box-shadow      : 0 0 10px black;
+        }
+
+        .speed-slider {
+            margin-top     : 25px;
+            display        : flex;
+            align-items    : flex-end;
+            justify-content: center;
+            font-size      : 14px;
         }
     }
 }

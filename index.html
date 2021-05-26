@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,23 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Snake</title>
 </head>
+
 <body>
+    <div class="scoreContainer">
+        Score:
+        <span id="score">
+
+        </span>
+    </div>
+    <div id="pauseInfo">Press P to pause</div>
+
     <canvas id="game"></canvas>
+
+    <div class="speed-slider">
+        Boringly Slow
+        <input type="range" min="0" max="9" id="speed">
+        Insanely FAST
+    </div>
     <script src="js/message.js"></script>
     <script src="js/food.js"></script>
     <script src="js/input.js"></script>
@@ -16,4 +32,5 @@
     <script src="js/game.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
